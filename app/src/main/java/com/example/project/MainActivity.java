@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView textResult;
     Button buttonGameResult;
-
+//ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа
 //    Button buttonAnotherPlay;
 
     ImageView player1FirstCardImage;

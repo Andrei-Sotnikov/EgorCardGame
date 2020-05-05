@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/lol">
 
     <Button
         android:id="@+id/buttonPlayer1"
         android:layout_width="144dp"
         android:layout_height="41dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="224dp"
+        android:layout_marginTop="248dp"
         android:layout_marginRight="8dp"
+        android:background="@android:color/darker_gray"
         android:onClick="onPlayer1ButtonClick"
         android:text="@string/button_player1"
         android:textColorLink="@android:color/black"
@@ -31,6 +33,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="260dp"
 
+        android:background="@android:color/darker_gray"
         android:onClick="onPlayer2ButtonClick"
         android:text="@string/button_player2"
         android:textColorLink="@android:color/black"
