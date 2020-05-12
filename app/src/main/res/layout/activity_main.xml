@@ -5,7 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/lol">
+    >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/background1"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"/>
 
     <Button
         android:id="@+id/buttonPlayer1"
