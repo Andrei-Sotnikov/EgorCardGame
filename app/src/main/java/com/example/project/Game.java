@@ -65,7 +65,7 @@ public class Game {
 
     public ArrayList<Card> dealPlayer1Card() {
         player1Hand = hand1.buildHand();
-        Player player1  = new Player("Player1", hand1);
+        Player player1  = new Player("Игрок", hand1);
         player1Name = player1.getName();
 
         player1DealtCardSuit = hand1.getCardSuit();
@@ -102,7 +102,7 @@ public class Game {
 
     public ArrayList<Card> dealPlayer2Card() {
         player2Hand = hand2.buildHand();
-        Player player2  = new Player("Player2", hand2);
+        Player player2  = new Player("Противник", hand2);
         player2Name = player2.getName();
 
         player2DealtCardSuit = hand2.getCardSuit();
