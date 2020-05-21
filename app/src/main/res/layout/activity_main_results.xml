@@ -11,7 +11,8 @@
         android:layout_width="405dp"
         android:layout_height="584dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <TextView
         android:id="@+id/tv_best_player"

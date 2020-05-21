@@ -198,8 +198,8 @@ public class MainActivity2 extends AppCompatActivity {
         player2HandNewValue = game.getPlayer2HandNewValue();
         ContentValues contentValues = new ContentValues();
         String outcome = game.getResult(player1HandNewValue, player2HandNewValue);
-        String[] arrSplit = outcome.split(" ");
-        contentValues.put(DBsecond.KEY_NAME, arrSplit[0]);
+
+        contentValues.put(DBsecond.KEY_NAME, outcome);
         database.insert(DBsecond.TABLE_CONTACTS, null, contentValues);
         textResult.setText(outcome);
 

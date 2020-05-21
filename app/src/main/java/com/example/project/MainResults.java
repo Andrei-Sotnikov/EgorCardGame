@@ -45,7 +45,8 @@ public class MainResults extends AppCompatActivity {
             //i++;
             do {
                 Log.e("gLog", "ID = " + cursor.getInt(idIndex) +
-                        ", name = " + cursor.getString(number_name));  test.add(cursor.getString(number_name));
+                        ", name = " + cursor.getString(number_name));
+                test.add(cursor.getString(number_name));
                // Toast.makeText(this , "lol" , Toast.LENGTH_LONG).show();
             } while (cursor.moveToNext());
         } else{
