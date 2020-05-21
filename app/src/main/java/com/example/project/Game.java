@@ -1,5 +1,7 @@
 package com.example.project;
 
+import android.database.sqlite.SQLiteDatabase;
+
 import java.util.ArrayList;
 
 public class Game {
@@ -21,6 +23,11 @@ public class Game {
 
     private String result;
     private String resultMessage;
+
+    DBHelper dbHelper;
+    SQLiteDatabase database;
+
+
 
     Hand hand1 = new Hand();
     Hand hand2 = new Hand();
@@ -138,10 +145,16 @@ public class Game {
     }
 
     public String getResult(int player1HandNewValue, int player2HandNewValue) {
+
+
+
+
+
         player1HandNewValue = getPlayer1HandNewValue();
         player2HandNewValue = getPlayer2HandNewValue();
         result = rule.getResult(player1HandNewValue, player2HandNewValue);
         if (result.equals("Player1")) {
+
             resultMessage = player1.getName() + " is the winner!!!";
         } else if (result.equals("Player2")) {
             resultMessage = player2.getName() + " is the winner!!!";

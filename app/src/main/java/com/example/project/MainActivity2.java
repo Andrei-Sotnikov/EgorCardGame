@@ -1,5 +1,7 @@
 package com.example.project;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -49,6 +51,15 @@ public class MainActivity2 extends AppCompatActivity {
     TextView textPlayer2LatestCard;
     Button buttonPlayer2;
 
+
+    DBHelper dbHelper;
+    DBsecond dbHelper2;
+
+
+    SQLiteDatabase database;
+    SQLiteDatabase database2;
+
+
     TextView textResult;
     Button buttonGameResult;
 //ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа
@@ -82,7 +93,7 @@ public class MainActivity2 extends AppCompatActivity {
             imageView.setImageResource(R.drawable.background1);
         }else if (second_number == 2){
             imageView.setImageResource(R.drawable.background2);
-        }else{
+        }else if (second_number == 3){
             imageView.setImageResource(R.drawable.background3);
         }
 
@@ -180,9 +191,16 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     public void onResultButtonClick(View view) {
+        dbHelper2 = new DBsecond(this);
+        database = dbHelper2.getWritableDatabase();
+
         player1HandNewValue = game.getPlayer1HandNewValue();
         player2HandNewValue = game.getPlayer2HandNewValue();
+        ContentValues contentValues = new ContentValues();
         String outcome = game.getResult(player1HandNewValue, player2HandNewValue);
+        String[] arrSplit = outcome.split(" ");
+        contentValues.put(DBsecond.KEY_NAME, arrSplit[0]);
+        database.insert(DBsecond.TABLE_CONTACTS, null, contentValues);
         textResult.setText(outcome);
 
     }

@@ -22,8 +22,12 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 Button bt_start_game , bt_settings , bt_past_results;
 DBHelper dbHelper;
-int db_background;
+DBHelper dbHelper2;
+
+
     SQLiteDatabase database;
+    SQLiteDatabase database2;
+    int db_background;
     int number_name;
     int test;
 
@@ -34,17 +38,18 @@ int db_background;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         dbHelper = new DBHelper(this);
+//        dbHelper2 = new DBHelper(this);
         Bundle arguments = getIntent().getExtras();
 
         if(arguments!=null){
 
-            db_background = arguments.getInt("number_background");
+            /*db_background = arguments.getInt("number_background");
             database = dbHelper.getWritableDatabase();
             database.delete(DBHelper.TABLE_CONTACTS, null, null);
             ContentValues contentValues = new ContentValues();
 
             contentValues.put(DBHelper.KEY_NAME, db_background);
-            database.insert(DBHelper.TABLE_CONTACTS, null, contentValues);
+            database.insert(DBHelper.TABLE_CONTACTS, null, contentValues);*/
         }
 
 
@@ -54,6 +59,7 @@ int db_background;
             @Override
             public void onClick(View v) {
                 Cursor cursor = database.query(DBHelper.TABLE_CONTACTS, null, null, null, null, null, null);
+
                 if (cursor.moveToFirst()) {
                     int idIndex = cursor.getColumnIndex(DBHelper.KEY_ID);
                     number_name = cursor.getColumnIndex(DBHelper.KEY_NAME);
@@ -74,6 +80,10 @@ int db_background;
                 startActivity(intent);
             }
         });
+        database = dbHelper.getWritableDatabase();
+       // Cursor cursor2 = database.query(DBHelper_second.TABLE_CONTACTS, null, null, null, null, null, null);
+        ContentValues contentValues = new ContentValues();
+
         bt_settings = (Button) findViewById(R.id.bt_settings);
         bt_settings.setOnClickListener(new View.OnClickListener() {
             @Override
