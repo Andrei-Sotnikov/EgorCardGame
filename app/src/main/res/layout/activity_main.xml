@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    >
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:srcCompat="@drawable/background1"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY"/>
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/background1" />
 
     <Button
         android:id="@+id/buttonPlayer1"
@@ -98,11 +97,11 @@
         android:textColor="@android:color/holo_red_light"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.705"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonResult"
-        app:layout_constraintVertical_bias="0.396" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/player1FirstCard"
@@ -225,5 +224,49 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.969"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/Redial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="92dp"
+        android:text="Redial"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player2FirstCard" />
+
+    <Button
+        android:id="@+id/Hit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="92dp"
+        android:text="Hit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player2SecondCard" />
+
+    <Button
+        android:id="@+id/Stand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="208dp"
+        android:layout_marginLeft="208dp"
+        android:layout_marginTop="92dp"
+        android:text="Stand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player2ThirdCard" />
+
+    <Button
+        android:id="@+id/Double"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="304dp"
+        android:layout_marginLeft="304dp"
+        android:layout_marginTop="100dp"
+        android:text="Double"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player2FourthCard" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

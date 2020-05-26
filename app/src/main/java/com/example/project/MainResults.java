@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.lang.reflect.Array;
@@ -23,6 +24,11 @@ public class MainResults extends AppCompatActivity {
     ArrayList<String> test;
     String[] test1;
     int i;
+    String most_name;
+    int first_count = 0;
+    int sec_count = 0;
+    String best_name;
+    TextView tv_best_player;
 
     ListView list_results;
     @Override
@@ -33,6 +39,8 @@ public class MainResults extends AppCompatActivity {
         database = dbHelper.getWritableDatabase();
         test1 = new String[20];
         test = new ArrayList<>();
+        tv_best_player = (TextView) findViewById(R.id.tv_best_player);
+        most_name = "";
 
 
         Cursor cursor = database.query(DBsecond.TABLE_CONTACTS, null, null, null, null, null, null);
@@ -56,6 +64,25 @@ public class MainResults extends AppCompatActivity {
 
         cursor.close();
 
+        for (int j = 0; j < test.size() ; j++) {
+            if (!most_name.equals(test.get(j))){
+                most_name = test.get(j);
+                for (int k = 0; k < test.size(); k++) {
+                    if (most_name.equals(test.get(k))){
+                        first_count++;
+                    }
+                }
+            }if (sec_count < first_count){
+                sec_count = first_count;
+                first_count = 0;
+                best_name = most_name;
+            }else{
+                first_count = 0;
+            }
+
+
+        }
+
 
         list_results = (ListView) findViewById(R.id.list_results);
         final String[] catNames = new String[] {
@@ -72,5 +99,7 @@ public class MainResults extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1 , test);
       //  Toast.makeText(this , "lol" , Toast.LENGTH_LONG).show();
         list_results.setAdapter(adapter);
+
+        tv_best_player.setText("Лучший игрок: " + best_name);
     }
 }
