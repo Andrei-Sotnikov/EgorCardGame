@@ -17,7 +17,7 @@
         android:layout_marginTop="36dp"
         android:background="@color/button"
         android:gravity="center"
-        android:text="help"
+        android:text="Настройки"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
