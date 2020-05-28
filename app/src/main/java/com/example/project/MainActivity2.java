@@ -33,7 +33,8 @@ public class MainActivity2 extends AppCompatActivity {
     Animation sunRiseAnimation2;
     TextView tv_winner;
 
-    Button stand , bt_count , hit;
+    Button stand , bt_count , hit , bt_bot_count;
+
 
     int main_count_of_player;
     String main_count;
@@ -42,8 +43,8 @@ public class MainActivity2 extends AppCompatActivity {
 
     int proverka_dostupa;
 
-    int probeg;
-
+    int probeg ;
+    //float btX , btY;
     ImageView demonstration , demonstration2 , demonstration3;
 
 
@@ -68,6 +69,16 @@ public class MainActivity2 extends AppCompatActivity {
 
         tv_winner = (TextView) findViewById(R.id.tv_winner);
 
+
+        bt_bot_count = (Button) findViewById(R.id.bt_bot_count);
+        //btX = bt_bot_count.getX();
+       // btY = bt_bot_count.getY();
+       // bt_bot_count.setX(9999);
+       // bt_bot_count.setY(9999);
+
+        bt_bot_count.setText("Счёт бота скрыт");
+
+
         bot_count = 0;
         bot_cards = 2;
 
@@ -81,6 +92,18 @@ public class MainActivity2 extends AppCompatActivity {
         player2FourthCardImage = (ImageView) findViewById(R.id.player2FourthCard);
         player1ThirdCardImage = (ImageView) findViewById(R.id.player1ThirdCard);
         player1FourthCardImage = (ImageView) findViewById(R.id.player1FourthCard);
+
+        sunRiseAnimation = AnimationUtils.loadAnimation(this, R.anim.animation);
+        player1FirstCardImage.startAnimation(sunRiseAnimation);
+        player2FirstCardImage.startAnimation(sunRiseAnimation);
+       // player1SecondCardImage.startAnimation(sunRiseAnimation);
+        player2SecondCardImage.startAnimation(sunRiseAnimation);
+        //player1ThirdCardImage.startAnimation(sunRiseAnimation);
+       // player2ThirdCardImage.startAnimation(sunRiseAnimation);
+       // player1FourthCardImage.startAnimation(sunRiseAnimation);
+     //   player2FourthCardImage.startAnimation(sunRiseAnimation);
+
+
 
 
 
@@ -536,7 +559,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         main_count = ""+main_count_of_player;
 
-        bt_count.setText(main_count);
+        bt_count.setText("Ваш счёт: "+main_count);
 
         probeg = 0;
 
@@ -984,6 +1007,1140 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                if (bot_count>15 && bot_count<19){
+                    int vremenno = (int) (Math.random() * 100);
+                    if (vremenno>=0 && vremenno<=15){
+                        if (bot_cards==3){
+                            int vibor_masti = (int) (Math.random() * 100);
+                            if (vibor_masti >= 0 && vibor_masti <= 25) {
+                                int choose_force = (int) (Math.random() * 100);
+                                if (choose_force >= 0 && choose_force <= 10) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.two_of_spades);
+                                    bot_count+=2;
+
+
+                                } else if (choose_force > 10 && choose_force <= 20) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.three_of_spades);
+                                    bot_count+=3;
+
+                                } else if (choose_force > 20 && choose_force <= 30) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.four_of_spades);
+                                    bot_count+=4;
+
+
+                                } else if (choose_force > 30 && choose_force <= 40) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.five_of_spades);
+                                    bot_count+=5;
+
+
+                                } else if (choose_force > 40 && choose_force <= 50) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.six_of_spades);
+                                    bot_count+=6;
+
+
+                                } else if (choose_force > 50 && choose_force <= 60) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.seven_of_spades);
+                                    bot_count+=7;
+
+
+                                } else if (choose_force > 60 && choose_force <= 70) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.eight_of_spades);
+                                    bot_count+=8;
+
+
+                                } else if (choose_force > 70 && choose_force <= 80) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.nine_of_spades);
+                                    bot_count+=9;
+
+                                } else if (choose_force > 80 && choose_force <= 90) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ten_of_spades);
+                                    bot_count+=10;
+
+
+                                } else if (choose_force > 90 && choose_force <= 95) {
+
+                                    player1FirstCardImage.setImageResource(R.drawable.king_of_spades);
+                                    bot_count+=11;
+
+
+                                } else if (choose_force > 95 && choose_force <= 100) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ace_of_spades);
+                                    bot_count+=12;
+
+                                }
+                            } else if (vibor_masti > 25 && vibor_masti <= 50) {
+                                int choose_force = (int) (Math.random() * 100);
+                                if (choose_force >= 0 && choose_force <= 10) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.two_of_hearts);
+                                    bot_count+=2;
+
+                                } else if (choose_force > 10 && choose_force <= 20) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.three_of_hearts);
+                                    bot_count+=3;
+
+
+                                } else if (choose_force > 20 && choose_force <= 30) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.four_of_hearts);
+                                    bot_count+=4;
+
+
+                                } else if (choose_force > 30 && choose_force <= 40) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.five_of_hearts);
+                                    bot_count+=5;
+
+
+                                } else if (choose_force > 40 && choose_force <= 50) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.six_of_hearts);
+                                    bot_count+=6;
+
+
+                                } else if (choose_force > 50 && choose_force <= 60) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.seven_of_hearts);
+                                    bot_count+=7;
+
+
+                                } else if (choose_force > 60 && choose_force <= 70) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.eight_of_hearts);
+                                    bot_count+=8;
+
+
+                                } else if (choose_force > 70 && choose_force <= 80) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.nine_of_hearts);
+                                    bot_count+=9;
+
+
+                                } else if (choose_force > 80 && choose_force <= 90) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ten_of_hearts);
+                                    bot_count+=10;
+
+
+                                } else if (choose_force > 90 && choose_force <= 95) {
+
+                                    player1FirstCardImage.setImageResource(R.drawable.king_of_hearts);
+                                    bot_count+=11;
+
+
+                                } else if (choose_force > 95 && choose_force <= 100) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ace_of_hearts);
+                                    bot_count+=12;
+
+
+                                }
+
+                            } else if (vibor_masti > 50 && vibor_masti <= 75) {
+                                int choose_force = (int) (Math.random() * 100);
+                                if (choose_force >= 0 && choose_force <= 10) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.two_of_diamonds);
+                                    bot_count+=2;
+
+
+                                } else if (choose_force > 10 && choose_force <= 20) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.three_of_diamonds);
+                                    bot_count+=3;
+
+
+                                } else if (choose_force > 20 && choose_force <= 30) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.four_of_diamonds);
+                                    bot_count+=4;
+
+
+                                } else if (choose_force > 30 && choose_force <= 40) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.five_of_diamonds);
+                                    bot_count+=5;
+
+
+                                } else if (choose_force > 40 && choose_force <= 50) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.six_of_diamonds);
+                                    bot_count+=6;
+
+
+                                } else if (choose_force > 50 && choose_force <= 60) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.seven_of_diamonds);
+                                    bot_count+=7;
+
+
+                                } else if (choose_force > 60 && choose_force <= 70) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.eight_of_diamonds);
+                                    bot_count+=8;
+
+
+                                } else if (choose_force > 70 && choose_force <= 80) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.nine_of_diamonds);
+                                    bot_count+=9;
+
+
+                                } else if (choose_force > 80 && choose_force <= 90) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ten_of_diamonds);
+                                    bot_count+=10;
+
+
+                                } else if (choose_force > 90 && choose_force <= 95) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.king_of_diamonds);
+                                    bot_count+=11;
+
+
+                                } else if (choose_force > 95 && choose_force <= 100) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ace_of_diamonds);
+                                    bot_count+=12;
+
+
+                                }
+
+                            } else if (vibor_masti > 75 && vibor_masti <= 100) {
+                                int choose_force = (int) (Math.random() * 100);
+                                if (choose_force >= 0 && choose_force <= 10) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.two_of_clubs);
+                                    bot_count+=2;
+
+
+                                } else if (choose_force > 10 && choose_force <= 20) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.three_of_clubs);
+                                    bot_count+=3;
+
+
+                                } else if (choose_force > 20 && choose_force <= 30) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.four_of_clubs);
+                                    bot_count+=4;
+
+                                } else if (choose_force > 30 && choose_force <= 40) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.five_of_clubs);
+                                    bot_count+=5;
+
+
+                                } else if (choose_force > 40 && choose_force <= 50) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.six_of_clubs);
+                                    bot_count+=6;
+
+
+                                } else if (choose_force > 50 && choose_force <= 60) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.seven_of_clubs);
+                                    bot_count+=7;
+
+
+                                } else if (choose_force > 60 && choose_force <= 70) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.eight_of_clubs);
+                                    bot_count+=8;
+
+
+                                } else if (choose_force > 70 && choose_force <= 80) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.nine_of_clubs);
+                                    bot_count+=9;
+
+                                } else if (choose_force > 80 && choose_force <= 90) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ten_of_clubs);
+                                    bot_count+=10;
+
+
+                                } else if (choose_force > 90 && choose_force <= 95) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.king_of_clubs);
+                                    bot_count+=11;
+
+
+                                } else if (choose_force > 95 && choose_force <= 100) {
+                                    if (probeg == 0){
+                                        player1ThirdCardImage.setImageResource(R.drawable.ace_of_clubs);
+                                        bot_count+=12;
+                                    }
+                                }
+
+                            }bot_cards++;
+                        }
+                    }
+                }
+
+
+                if (bot_count>15 && bot_count<19){
+                    int vremenno = (int) (Math.random() * 100);
+                    if (vremenno>=0 && vremenno<=15){
+                        if (bot_cards==2){
+                            int vibor_masti = (int) (Math.random() * 100);
+                            if (vibor_masti >= 0 && vibor_masti <= 25) {
+                                int choose_force = (int) (Math.random() * 100);
+                                if (choose_force >= 0 && choose_force <= 10) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.two_of_spades);
+                                    bot_count+=2;
+
+
+                                } else if (choose_force > 10 && choose_force <= 20) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.three_of_spades);
+                                    bot_count+=3;
+
+                                } else if (choose_force > 20 && choose_force <= 30) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.four_of_spades);
+                                    bot_count+=4;
+
+
+                                } else if (choose_force > 30 && choose_force <= 40) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.five_of_spades);
+                                    bot_count+=5;
+
+
+                                } else if (choose_force > 40 && choose_force <= 50) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.six_of_spades);
+                                    bot_count+=6;
+
+
+                                } else if (choose_force > 50 && choose_force <= 60) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.seven_of_spades);
+                                    bot_count+=7;
+
+
+                                } else if (choose_force > 60 && choose_force <= 70) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.eight_of_spades);
+                                    bot_count+=8;
+
+
+                                } else if (choose_force > 70 && choose_force <= 80) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.nine_of_spades);
+                                    bot_count+=9;
+
+                                } else if (choose_force > 80 && choose_force <= 90) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ten_of_spades);
+                                    bot_count+=10;
+
+
+                                } else if (choose_force > 90 && choose_force <= 95) {
+
+                                    player1FirstCardImage.setImageResource(R.drawable.king_of_spades);
+                                    bot_count+=11;
+
+
+                                } else if (choose_force > 95 && choose_force <= 100) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ace_of_spades);
+                                    bot_count+=12;
+
+                                }
+                            } else if (vibor_masti > 25 && vibor_masti <= 50) {
+                                int choose_force = (int) (Math.random() * 100);
+                                if (choose_force >= 0 && choose_force <= 10) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.two_of_hearts);
+                                    bot_count+=2;
+
+                                } else if (choose_force > 10 && choose_force <= 20) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.three_of_hearts);
+                                    bot_count+=3;
+
+
+                                } else if (choose_force > 20 && choose_force <= 30) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.four_of_hearts);
+                                    bot_count+=4;
+
+
+                                } else if (choose_force > 30 && choose_force <= 40) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.five_of_hearts);
+                                    bot_count+=5;
+
+
+                                } else if (choose_force > 40 && choose_force <= 50) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.six_of_hearts);
+                                    bot_count+=6;
+
+
+                                } else if (choose_force > 50 && choose_force <= 60) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.seven_of_hearts);
+                                    bot_count+=7;
+
+
+                                } else if (choose_force > 60 && choose_force <= 70) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.eight_of_hearts);
+                                    bot_count+=8;
+
+
+                                } else if (choose_force > 70 && choose_force <= 80) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.nine_of_hearts);
+                                    bot_count+=9;
+
+
+                                } else if (choose_force > 80 && choose_force <= 90) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ten_of_hearts);
+                                    bot_count+=10;
+
+
+                                } else if (choose_force > 90 && choose_force <= 95) {
+
+                                    player1FirstCardImage.setImageResource(R.drawable.king_of_hearts);
+                                    bot_count+=11;
+
+
+                                } else if (choose_force > 95 && choose_force <= 100) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ace_of_hearts);
+                                    bot_count+=12;
+
+
+                                }
+
+                            } else if (vibor_masti > 50 && vibor_masti <= 75) {
+                                int choose_force = (int) (Math.random() * 100);
+                                if (choose_force >= 0 && choose_force <= 10) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.two_of_diamonds);
+                                    bot_count+=2;
+
+
+                                } else if (choose_force > 10 && choose_force <= 20) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.three_of_diamonds);
+                                    bot_count+=3;
+
+
+                                } else if (choose_force > 20 && choose_force <= 30) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.four_of_diamonds);
+                                    bot_count+=4;
+
+
+                                } else if (choose_force > 30 && choose_force <= 40) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.five_of_diamonds);
+                                    bot_count+=5;
+
+
+                                } else if (choose_force > 40 && choose_force <= 50) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.six_of_diamonds);
+                                    bot_count+=6;
+
+
+                                } else if (choose_force > 50 && choose_force <= 60) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.seven_of_diamonds);
+                                    bot_count+=7;
+
+
+                                } else if (choose_force > 60 && choose_force <= 70) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.eight_of_diamonds);
+                                    bot_count+=8;
+
+
+                                } else if (choose_force > 70 && choose_force <= 80) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.nine_of_diamonds);
+                                    bot_count+=9;
+
+
+                                } else if (choose_force > 80 && choose_force <= 90) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ten_of_diamonds);
+                                    bot_count+=10;
+
+
+                                } else if (choose_force > 90 && choose_force <= 95) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.king_of_diamonds);
+                                    bot_count+=11;
+
+
+                                } else if (choose_force > 95 && choose_force <= 100) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ace_of_diamonds);
+                                    bot_count+=12;
+
+
+                                }
+
+                            } else if (vibor_masti > 75 && vibor_masti <= 100) {
+                                int choose_force = (int) (Math.random() * 100);
+                                if (choose_force >= 0 && choose_force <= 10) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.two_of_clubs);
+                                    bot_count+=2;
+
+
+                                } else if (choose_force > 10 && choose_force <= 20) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.three_of_clubs);
+                                    bot_count+=3;
+
+
+                                } else if (choose_force > 20 && choose_force <= 30) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.four_of_clubs);
+                                    bot_count+=4;
+
+                                } else if (choose_force > 30 && choose_force <= 40) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.five_of_clubs);
+                                    bot_count+=5;
+
+
+                                } else if (choose_force > 40 && choose_force <= 50) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.six_of_clubs);
+                                    bot_count+=6;
+
+
+                                } else if (choose_force > 50 && choose_force <= 60) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.seven_of_clubs);
+                                    bot_count+=7;
+
+
+                                } else if (choose_force > 60 && choose_force <= 70) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.eight_of_clubs);
+                                    bot_count+=8;
+
+
+                                } else if (choose_force > 70 && choose_force <= 80) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.nine_of_clubs);
+                                    bot_count+=9;
+
+                                } else if (choose_force > 80 && choose_force <= 90) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ten_of_clubs);
+                                    bot_count+=10;
+
+
+                                } else if (choose_force > 90 && choose_force <= 95) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.king_of_clubs);
+                                    bot_count+=11;
+
+
+                                } else if (choose_force > 95 && choose_force <= 100) {
+                                    if (probeg == 0){
+                                        player1ThirdCardImage.setImageResource(R.drawable.ace_of_clubs);
+                                        bot_count+=12;
+                                    }
+                                }
+
+                            }bot_cards++;
+                        }
+                    }
+                }
+
+
+
+                if (bot_count>=10 && bot_count<=15){
+                    int vremenno = (int) (Math.random() * 100);
+                    if (vremenno>=0 && vremenno<=50){
+                        if (bot_cards==3){
+                            int vibor_masti = (int) (Math.random() * 100);
+                            if (vibor_masti >= 0 && vibor_masti <= 25) {
+                                int choose_force = (int) (Math.random() * 100);
+                                if (choose_force >= 0 && choose_force <= 10) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.two_of_spades);
+                                    bot_count+=2;
+
+
+                                } else if (choose_force > 10 && choose_force <= 20) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.three_of_spades);
+                                    bot_count+=3;
+
+                                } else if (choose_force > 20 && choose_force <= 30) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.four_of_spades);
+                                    bot_count+=4;
+
+
+                                } else if (choose_force > 30 && choose_force <= 40) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.five_of_spades);
+                                    bot_count+=5;
+
+
+                                } else if (choose_force > 40 && choose_force <= 50) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.six_of_spades);
+                                    bot_count+=6;
+
+
+                                } else if (choose_force > 50 && choose_force <= 60) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.seven_of_spades);
+                                    bot_count+=7;
+
+
+                                } else if (choose_force > 60 && choose_force <= 70) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.eight_of_spades);
+                                    bot_count+=8;
+
+
+                                } else if (choose_force > 70 && choose_force <= 80) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.nine_of_spades);
+                                    bot_count+=9;
+
+                                } else if (choose_force > 80 && choose_force <= 90) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ten_of_spades);
+                                    bot_count+=10;
+
+
+                                } else if (choose_force > 90 && choose_force <= 95) {
+
+                                    player1FirstCardImage.setImageResource(R.drawable.king_of_spades);
+                                    bot_count+=11;
+
+
+                                } else if (choose_force > 95 && choose_force <= 100) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ace_of_spades);
+                                    bot_count+=12;
+
+                                }
+                            } else if (vibor_masti > 25 && vibor_masti <= 50) {
+                                int choose_force = (int) (Math.random() * 100);
+                                if (choose_force >= 0 && choose_force <= 10) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.two_of_hearts);
+                                    bot_count+=2;
+
+                                } else if (choose_force > 10 && choose_force <= 20) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.three_of_hearts);
+                                    bot_count+=3;
+
+
+                                } else if (choose_force > 20 && choose_force <= 30) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.four_of_hearts);
+                                    bot_count+=4;
+
+
+                                } else if (choose_force > 30 && choose_force <= 40) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.five_of_hearts);
+                                    bot_count+=5;
+
+
+                                } else if (choose_force > 40 && choose_force <= 50) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.six_of_hearts);
+                                    bot_count+=6;
+
+
+                                } else if (choose_force > 50 && choose_force <= 60) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.seven_of_hearts);
+                                    bot_count+=7;
+
+
+                                } else if (choose_force > 60 && choose_force <= 70) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.eight_of_hearts);
+                                    bot_count+=8;
+
+
+                                } else if (choose_force > 70 && choose_force <= 80) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.nine_of_hearts);
+                                    bot_count+=9;
+
+
+                                } else if (choose_force > 80 && choose_force <= 90) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ten_of_hearts);
+                                    bot_count+=10;
+
+
+                                } else if (choose_force > 90 && choose_force <= 95) {
+
+                                    player1FirstCardImage.setImageResource(R.drawable.king_of_hearts);
+                                    bot_count+=11;
+
+
+                                } else if (choose_force > 95 && choose_force <= 100) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ace_of_hearts);
+                                    bot_count+=12;
+
+
+                                }
+
+                            } else if (vibor_masti > 50 && vibor_masti <= 75) {
+                                int choose_force = (int) (Math.random() * 100);
+                                if (choose_force >= 0 && choose_force <= 10) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.two_of_diamonds);
+                                    bot_count+=2;
+
+
+                                } else if (choose_force > 10 && choose_force <= 20) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.three_of_diamonds);
+                                    bot_count+=3;
+
+
+                                } else if (choose_force > 20 && choose_force <= 30) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.four_of_diamonds);
+                                    bot_count+=4;
+
+
+                                } else if (choose_force > 30 && choose_force <= 40) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.five_of_diamonds);
+                                    bot_count+=5;
+
+
+                                } else if (choose_force > 40 && choose_force <= 50) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.six_of_diamonds);
+                                    bot_count+=6;
+
+
+                                } else if (choose_force > 50 && choose_force <= 60) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.seven_of_diamonds);
+                                    bot_count+=7;
+
+
+                                } else if (choose_force > 60 && choose_force <= 70) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.eight_of_diamonds);
+                                    bot_count+=8;
+
+
+                                } else if (choose_force > 70 && choose_force <= 80) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.nine_of_diamonds);
+                                    bot_count+=9;
+
+
+                                } else if (choose_force > 80 && choose_force <= 90) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ten_of_diamonds);
+                                    bot_count+=10;
+
+
+                                } else if (choose_force > 90 && choose_force <= 95) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.king_of_diamonds);
+                                    bot_count+=11;
+
+
+                                } else if (choose_force > 95 && choose_force <= 100) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ace_of_diamonds);
+                                    bot_count+=12;
+
+
+                                }
+
+                            } else if (vibor_masti > 75 && vibor_masti <= 100) {
+                                int choose_force = (int) (Math.random() * 100);
+                                if (choose_force >= 0 && choose_force <= 10) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.two_of_clubs);
+                                    bot_count+=2;
+
+
+                                } else if (choose_force > 10 && choose_force <= 20) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.three_of_clubs);
+                                    bot_count+=3;
+
+
+                                } else if (choose_force > 20 && choose_force <= 30) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.four_of_clubs);
+                                    bot_count+=4;
+
+                                } else if (choose_force > 30 && choose_force <= 40) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.five_of_clubs);
+                                    bot_count+=5;
+
+
+                                } else if (choose_force > 40 && choose_force <= 50) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.six_of_clubs);
+                                    bot_count+=6;
+
+
+                                } else if (choose_force > 50 && choose_force <= 60) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.seven_of_clubs);
+                                    bot_count+=7;
+
+
+                                } else if (choose_force > 60 && choose_force <= 70) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.eight_of_clubs);
+                                    bot_count+=8;
+
+
+                                } else if (choose_force > 70 && choose_force <= 80) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.nine_of_clubs);
+                                    bot_count+=9;
+
+                                } else if (choose_force > 80 && choose_force <= 90) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ten_of_clubs);
+                                    bot_count+=10;
+
+
+                                } else if (choose_force > 90 && choose_force <= 95) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.king_of_clubs);
+                                    bot_count+=11;
+
+
+                                } else if (choose_force > 95 && choose_force <= 100) {
+                                    if (probeg == 0){
+                                        player1ThirdCardImage.setImageResource(R.drawable.ace_of_clubs);
+                                        bot_count+=12;
+                                    }
+                                }
+
+                            }bot_cards++;
+                        }
+                    }
+                }
+
+
+
+
+                if (bot_count>=10 && bot_count<=15){
+                    int vremenno = (int) (Math.random() * 100);
+                    if (vremenno>=0 && vremenno<=50){
+                        if (bot_cards==2){
+                            int vibor_masti = (int) (Math.random() * 100);
+                            if (vibor_masti >= 0 && vibor_masti <= 25) {
+                                int choose_force = (int) (Math.random() * 100);
+                                if (choose_force >= 0 && choose_force <= 10) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.two_of_spades);
+                                    bot_count+=2;
+
+
+                                } else if (choose_force > 10 && choose_force <= 20) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.three_of_spades);
+                                    bot_count+=3;
+
+                                } else if (choose_force > 20 && choose_force <= 30) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.four_of_spades);
+                                    bot_count+=4;
+
+
+                                } else if (choose_force > 30 && choose_force <= 40) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.five_of_spades);
+                                    bot_count+=5;
+
+
+                                } else if (choose_force > 40 && choose_force <= 50) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.six_of_spades);
+                                    bot_count+=6;
+
+
+                                } else if (choose_force > 50 && choose_force <= 60) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.seven_of_spades);
+                                    bot_count+=7;
+
+
+                                } else if (choose_force > 60 && choose_force <= 70) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.eight_of_spades);
+                                    bot_count+=8;
+
+
+                                } else if (choose_force > 70 && choose_force <= 80) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.nine_of_spades);
+                                    bot_count+=9;
+
+                                } else if (choose_force > 80 && choose_force <= 90) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ten_of_spades);
+                                    bot_count+=10;
+
+
+                                } else if (choose_force > 90 && choose_force <= 95) {
+
+                                    player1FirstCardImage.setImageResource(R.drawable.king_of_spades);
+                                    bot_count+=11;
+
+
+                                } else if (choose_force > 95 && choose_force <= 100) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ace_of_spades);
+                                    bot_count+=12;
+
+                                }
+                            } else if (vibor_masti > 25 && vibor_masti <= 50) {
+                                int choose_force = (int) (Math.random() * 100);
+                                if (choose_force >= 0 && choose_force <= 10) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.two_of_hearts);
+                                    bot_count+=2;
+
+                                } else if (choose_force > 10 && choose_force <= 20) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.three_of_hearts);
+                                    bot_count+=3;
+
+
+                                } else if (choose_force > 20 && choose_force <= 30) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.four_of_hearts);
+                                    bot_count+=4;
+
+
+                                } else if (choose_force > 30 && choose_force <= 40) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.five_of_hearts);
+                                    bot_count+=5;
+
+
+                                } else if (choose_force > 40 && choose_force <= 50) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.six_of_hearts);
+                                    bot_count+=6;
+
+
+                                } else if (choose_force > 50 && choose_force <= 60) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.seven_of_hearts);
+                                    bot_count+=7;
+
+
+                                } else if (choose_force > 60 && choose_force <= 70) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.eight_of_hearts);
+                                    bot_count+=8;
+
+
+                                } else if (choose_force > 70 && choose_force <= 80) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.nine_of_hearts);
+                                    bot_count+=9;
+
+
+                                } else if (choose_force > 80 && choose_force <= 90) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ten_of_hearts);
+                                    bot_count+=10;
+
+
+                                } else if (choose_force > 90 && choose_force <= 95) {
+
+                                    player1FirstCardImage.setImageResource(R.drawable.king_of_hearts);
+                                    bot_count+=11;
+
+
+                                } else if (choose_force > 95 && choose_force <= 100) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ace_of_hearts);
+                                    bot_count+=12;
+
+
+                                }
+
+                            } else if (vibor_masti > 50 && vibor_masti <= 75) {
+                                int choose_force = (int) (Math.random() * 100);
+                                if (choose_force >= 0 && choose_force <= 10) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.two_of_diamonds);
+                                    bot_count+=2;
+
+
+                                } else if (choose_force > 10 && choose_force <= 20) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.three_of_diamonds);
+                                    bot_count+=3;
+
+
+                                } else if (choose_force > 20 && choose_force <= 30) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.four_of_diamonds);
+                                    bot_count+=4;
+
+
+                                } else if (choose_force > 30 && choose_force <= 40) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.five_of_diamonds);
+                                    bot_count+=5;
+
+
+                                } else if (choose_force > 40 && choose_force <= 50) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.six_of_diamonds);
+                                    bot_count+=6;
+
+
+                                } else if (choose_force > 50 && choose_force <= 60) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.seven_of_diamonds);
+                                    bot_count+=7;
+
+
+                                } else if (choose_force > 60 && choose_force <= 70) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.eight_of_diamonds);
+                                    bot_count+=8;
+
+
+                                } else if (choose_force > 70 && choose_force <= 80) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.nine_of_diamonds);
+                                    bot_count+=9;
+
+
+                                } else if (choose_force > 80 && choose_force <= 90) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ten_of_diamonds);
+                                    bot_count+=10;
+
+
+                                } else if (choose_force > 90 && choose_force <= 95) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.king_of_diamonds);
+                                    bot_count+=11;
+
+
+                                } else if (choose_force > 95 && choose_force <= 100) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ace_of_diamonds);
+                                    bot_count+=12;
+
+
+                                }
+
+                            } else if (vibor_masti > 75 && vibor_masti <= 100) {
+                                int choose_force = (int) (Math.random() * 100);
+                                if (choose_force >= 0 && choose_force <= 10) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.two_of_clubs);
+                                    bot_count+=2;
+
+
+                                } else if (choose_force > 10 && choose_force <= 20) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.three_of_clubs);
+                                    bot_count+=3;
+
+
+                                } else if (choose_force > 20 && choose_force <= 30) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.four_of_clubs);
+                                    bot_count+=4;
+
+                                } else if (choose_force > 30 && choose_force <= 40) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.five_of_clubs);
+                                    bot_count+=5;
+
+
+                                } else if (choose_force > 40 && choose_force <= 50) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.six_of_clubs);
+                                    bot_count+=6;
+
+
+                                } else if (choose_force > 50 && choose_force <= 60) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.seven_of_clubs);
+                                    bot_count+=7;
+
+
+                                } else if (choose_force > 60 && choose_force <= 70) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.eight_of_clubs);
+                                    bot_count+=8;
+
+
+                                } else if (choose_force > 70 && choose_force <= 80) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.nine_of_clubs);
+                                    bot_count+=9;
+
+                                } else if (choose_force > 80 && choose_force <= 90) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.ten_of_clubs);
+                                    bot_count+=10;
+
+
+                                } else if (choose_force > 90 && choose_force <= 95) {
+
+                                    player1ThirdCardImage.setImageResource(R.drawable.king_of_clubs);
+                                    bot_count+=11;
+
+
+                                } else if (choose_force > 95 && choose_force <= 100) {
+                                    if (probeg == 0){
+                                        player1ThirdCardImage.setImageResource(R.drawable.ace_of_clubs);
+                                        bot_count+=12;
+                                    }
+                                }
+
+                            }bot_cards++;
+                        }
+                    }
+                }
+
 
 
 
@@ -1264,7 +2421,7 @@ public class MainActivity2 extends AppCompatActivity {
                                     }
                                 }
 
-                            }
+                            }bot_cards++;
                         }
                     }
                 }
@@ -1549,7 +2706,7 @@ public class MainActivity2 extends AppCompatActivity {
                      }
                 }
 
-                            }
+                            }bot_cards++;
                         }
                     }
                 }
@@ -1573,65 +2730,76 @@ public class MainActivity2 extends AppCompatActivity {
                         if (choose_force >= 0 && choose_force <= 10) {
 
                             player2FourthCardImage.setImageResource(R.drawable.two_of_spades);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=2;
                             probeg++;
 
                         } else if (choose_force > 10 && choose_force <= 20) {
 
                             player2FourthCardImage.setImageResource(R.drawable.three_of_spades);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=3;
                             probeg++;
                         } else if (choose_force > 20 && choose_force <= 30) {
 
                             player2FourthCardImage.setImageResource(R.drawable.four_of_spades);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=4;
                             probeg++;
 
                         } else if (choose_force > 30 && choose_force <= 40) {
 
                             player2FourthCardImage.setImageResource(R.drawable.five_of_spades);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=5;
                             probeg++;
 
                         } else if (choose_force > 40 && choose_force <= 50) {
 
                             player2FourthCardImage.setImageResource(R.drawable.six_of_spades);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=6;
                             probeg++;
 
                         } else if (choose_force > 50 && choose_force <= 60) {
 
                             player2FourthCardImage.setImageResource(R.drawable.seven_of_spades);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=7;
                             probeg++;
 
                         } else if (choose_force > 60 && choose_force <= 70) {
 
                             player2FourthCardImage.setImageResource(R.drawable.eight_of_spades);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=8;
                             probeg++;
 
                         } else if (choose_force > 70 && choose_force <= 80) {
 
                             player2FourthCardImage.setImageResource(R.drawable.nine_of_spades);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=9;
                             probeg++;
 
                         } else if (choose_force > 80 && choose_force <= 90) {
 
                             player2FourthCardImage.setImageResource(R.drawable.ten_of_spades);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=10;
                             probeg++;
 
                         } else if (choose_force > 90 && choose_force <= 95) {
 
                             player2FourthCardImage.setImageResource(R.drawable.king_of_spades);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=11;
                             probeg++;
 
                         } else if (choose_force > 95 && choose_force <= 100) {
 
                             player2FourthCardImage.setImageResource(R.drawable.ace_of_spades);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=12;
                             probeg++;
                         }
@@ -1640,65 +2808,76 @@ public class MainActivity2 extends AppCompatActivity {
                         if (choose_force >= 0 && choose_force <= 10) {
 
                             player2FourthCardImage.setImageResource(R.drawable.two_of_hearts);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=2;
                             probeg++;
                         } else if (choose_force > 10 && choose_force <= 20) {
 
                             player2FourthCardImage.setImageResource(R.drawable.three_of_hearts);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=3;
                             probeg++;
 
                         } else if (choose_force > 20 && choose_force <= 30) {
 
                             player2FourthCardImage.setImageResource(R.drawable.four_of_hearts);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=4;
                             probeg++;
 
                         } else if (choose_force > 30 && choose_force <= 40) {
 
                             player2FourthCardImage.setImageResource(R.drawable.five_of_hearts);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=5;
                             probeg++;
 
                         } else if (choose_force > 40 && choose_force <= 50) {
 
                             player2FourthCardImage.setImageResource(R.drawable.six_of_hearts);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=6;
                             probeg++;
 
                         } else if (choose_force > 50 && choose_force <= 60) {
 
                             player2FourthCardImage.setImageResource(R.drawable.seven_of_hearts);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=7;
                             probeg++;
 
                         } else if (choose_force > 60 && choose_force <= 70) {
 
                             player2FourthCardImage.setImageResource(R.drawable.eight_of_hearts);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=8;
                             probeg++;
 
                         } else if (choose_force > 70 && choose_force <= 80) {
 
                             player2FourthCardImage.setImageResource(R.drawable.nine_of_hearts);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=9;
                             probeg++;
 
                         } else if (choose_force > 80 && choose_force <= 90) {
 
                             player2FourthCardImage.setImageResource(R.drawable.ten_of_hearts);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=10;
                             probeg++;
 
                         } else if (choose_force > 90 && choose_force <= 95) {
 
                             player2FourthCardImage.setImageResource(R.drawable.king_of_hearts);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=11;
                             probeg++;
 
                         } else if (choose_force > 95 && choose_force <= 100) {
 
                             player2FourthCardImage.setImageResource(R.drawable.ace_of_hearts);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=12;
                             probeg++;
 
@@ -1709,66 +2888,77 @@ public class MainActivity2 extends AppCompatActivity {
                         if (choose_force >= 0 && choose_force <= 10) {
 
                             player2FourthCardImage.setImageResource(R.drawable.two_of_diamonds);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=2;
                             probeg++;
 
                         } else if (choose_force > 10 && choose_force <= 20) {
 
                             player2FourthCardImage.setImageResource(R.drawable.three_of_diamonds);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=3;
                             probeg++;
 
                         } else if (choose_force > 20 && choose_force <= 30) {
 
                             player2FourthCardImage.setImageResource(R.drawable.four_of_diamonds);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=4;
                             probeg++;
 
                         } else if (choose_force > 30 && choose_force <= 40) {
 
                             player2FourthCardImage.setImageResource(R.drawable.five_of_diamonds);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=5;
                             probeg++;
 
                         } else if (choose_force > 40 && choose_force <= 50) {
 
                             player2FourthCardImage.setImageResource(R.drawable.six_of_diamonds);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=6;
                             probeg++;
 
                         } else if (choose_force > 50 && choose_force <= 60) {
 
                             player2FourthCardImage.setImageResource(R.drawable.seven_of_diamonds);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=7;
                             probeg++;
 
                         } else if (choose_force > 60 && choose_force <= 70) {
 
                             player2FourthCardImage.setImageResource(R.drawable.eight_of_diamonds);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=8;
                             probeg++;
 
                         } else if (choose_force > 70 && choose_force <= 80) {
 
                             player2FourthCardImage.setImageResource(R.drawable.nine_of_diamonds);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=9;
                             probeg++;
 
                         } else if (choose_force > 80 && choose_force <= 90) {
 
                             player2FourthCardImage.setImageResource(R.drawable.ten_of_diamonds);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=10;
                             probeg++;
 
                         } else if (choose_force > 90 && choose_force <= 95) {
 
                             player2FourthCardImage.setImageResource(R.drawable.king_of_diamonds);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=11;
                             probeg++;
 
                         } else if (choose_force > 95 && choose_force <= 100) {
 
                             player2FourthCardImage.setImageResource(R.drawable.ace_of_diamonds);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=12;
                             probeg++;
 
@@ -1779,64 +2969,75 @@ public class MainActivity2 extends AppCompatActivity {
                         if (choose_force >= 0 && choose_force <= 10) {
 
                             player2FourthCardImage.setImageResource(R.drawable.two_of_clubs);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=2;
                             probeg++;
 
                         } else if (choose_force > 10 && choose_force <= 20) {
 
                             player2FourthCardImage.setImageResource(R.drawable.three_of_clubs);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=3;
                             probeg++;
 
                         } else if (choose_force > 20 && choose_force <= 30) {
 
                             player2FourthCardImage.setImageResource(R.drawable.four_of_clubs);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=4;
                             probeg++;
 
                         } else if (choose_force > 30 && choose_force <= 40) {
 
                             player2FourthCardImage.setImageResource(R.drawable.five_of_clubs);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=5;
                             probeg++;
                         } else if (choose_force > 40 && choose_force <= 50) {
 
                             player2FourthCardImage.setImageResource(R.drawable.six_of_clubs);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=6;
                             probeg++;
 
                         } else if (choose_force > 50 && choose_force <= 60) {
 
                             player2FourthCardImage.setImageResource(R.drawable.seven_of_clubs);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=7;
                             probeg++;
 
                         } else if (choose_force > 60 && choose_force <= 70) {
 
                             player2FourthCardImage.setImageResource(R.drawable.eight_of_clubs);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=8;
                             probeg++;
 
                         } else if (choose_force > 70 && choose_force <= 80) {
 
                             player2FourthCardImage.setImageResource(R.drawable.nine_of_clubs);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=9;
                             probeg++;
                         } else if (choose_force > 80 && choose_force <= 90) {
 
                             player2FourthCardImage.setImageResource(R.drawable.ten_of_clubs);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=10;
                             probeg++;
 
                         } else if (choose_force > 90 && choose_force <= 95) {
 
                             player2FourthCardImage.setImageResource(R.drawable.king_of_clubs);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=11;
                             probeg++;
 
                         } else if (choose_force > 95 && choose_force <= 100) {
 
                             player2FourthCardImage.setImageResource(R.drawable.ace_of_clubs);
+                            player2FourthCardImage.startAnimation(sunRiseAnimation);
                             main_count_of_player+=12;
                             probeg++;
                         }
@@ -1853,65 +3054,76 @@ public class MainActivity2 extends AppCompatActivity {
                         if (choose_force >= 0 && choose_force <= 10) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.two_of_spades);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=2;
                                 probeg++;
 
                         } else if (choose_force > 10 && choose_force <= 20) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.three_of_spades);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=3;
                                 probeg++;
                         } else if (choose_force > 20 && choose_force <= 30) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.four_of_spades);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=4;
                                 probeg++;
 
                         } else if (choose_force > 30 && choose_force <= 40) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.five_of_spades);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=5;
                                 probeg++;
 
                         } else if (choose_force > 40 && choose_force <= 50) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.six_of_spades);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=6;
                                 probeg++;
 
                         } else if (choose_force > 50 && choose_force <= 60) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.seven_of_spades);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=7;
                                 probeg++;
 
                         } else if (choose_force > 60 && choose_force <= 70) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.eight_of_spades);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=8;
                                 probeg++;
 
                         } else if (choose_force > 70 && choose_force <= 80) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.nine_of_spades);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=9;
                                 probeg++;
 
                         } else if (choose_force > 80 && choose_force <= 90) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.ten_of_spades);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=10;
                                 probeg++;
 
                         } else if (choose_force > 90 && choose_force <= 95) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.king_of_spades);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=11;
                                 probeg++;
 
                         } else if (choose_force > 95 && choose_force <= 100) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.ace_of_spades);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=12;
                                 probeg++;
                         }
@@ -1920,65 +3132,76 @@ public class MainActivity2 extends AppCompatActivity {
                         if (choose_force >= 0 && choose_force <= 10) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.two_of_hearts);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=2;
                                 probeg++;
                         } else if (choose_force > 10 && choose_force <= 20) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.three_of_hearts);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=3;
                                 probeg++;
 
                         } else if (choose_force > 20 && choose_force <= 30) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.four_of_hearts);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=4;
                                 probeg++;
 
                         } else if (choose_force > 30 && choose_force <= 40) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.five_of_hearts);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=5;
                                 probeg++;
 
                         } else if (choose_force > 40 && choose_force <= 50) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.six_of_hearts);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=6;
                                 probeg++;
 
                         } else if (choose_force > 50 && choose_force <= 60) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.seven_of_hearts);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=7;
                                 probeg++;
 
                         } else if (choose_force > 60 && choose_force <= 70) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.eight_of_hearts);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=8;
                                 probeg++;
 
                         } else if (choose_force > 70 && choose_force <= 80) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.nine_of_hearts);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=9;
                                 probeg++;
 
                         } else if (choose_force > 80 && choose_force <= 90) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.ten_of_hearts);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=10;
                                 probeg++;
 
                         } else if (choose_force > 90 && choose_force <= 95) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.king_of_hearts);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=11;
                                 probeg++;
 
                         } else if (choose_force > 95 && choose_force <= 100) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.ace_of_hearts);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=12;
                                 probeg++;
 
@@ -1989,66 +3212,77 @@ public class MainActivity2 extends AppCompatActivity {
                         if (choose_force >= 0 && choose_force <= 10) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.two_of_diamonds);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=2;
                                 probeg++;
 
                         } else if (choose_force > 10 && choose_force <= 20) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.three_of_diamonds);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=3;
                                 probeg++;
 
                         } else if (choose_force > 20 && choose_force <= 30) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.four_of_diamonds);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=4;
                                 probeg++;
 
                         } else if (choose_force > 30 && choose_force <= 40) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.five_of_diamonds);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=5;
                                 probeg++;
 
                         } else if (choose_force > 40 && choose_force <= 50) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.six_of_diamonds);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=6;
                                 probeg++;
 
                         } else if (choose_force > 50 && choose_force <= 60) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.seven_of_diamonds);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=7;
                                 probeg++;
 
                         } else if (choose_force > 60 && choose_force <= 70) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.eight_of_diamonds);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=8;
                                 probeg++;
 
                         } else if (choose_force > 70 && choose_force <= 80) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.nine_of_diamonds);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=9;
                                 probeg++;
 
                         } else if (choose_force > 80 && choose_force <= 90) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.ten_of_diamonds);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=10;
                                 probeg++;
 
                         } else if (choose_force > 90 && choose_force <= 95) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.king_of_diamonds);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=11;
                                 probeg++;
 
                         } else if (choose_force > 95 && choose_force <= 100) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.ace_of_diamonds);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=12;
                                 probeg++;
 
@@ -2059,64 +3293,75 @@ public class MainActivity2 extends AppCompatActivity {
                         if (choose_force >= 0 && choose_force <= 10) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.two_of_clubs);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=2;
                                 probeg++;
 
                         } else if (choose_force > 10 && choose_force <= 20) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.three_of_clubs);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=3;
                                 probeg++;
 
                         } else if (choose_force > 20 && choose_force <= 30) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.four_of_clubs);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=4;
                                 probeg++;
 
                         } else if (choose_force > 30 && choose_force <= 40) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.five_of_clubs);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=5;
                                 probeg++;
                         } else if (choose_force > 40 && choose_force <= 50) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.six_of_clubs);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=6;
                                 probeg++;
 
                         } else if (choose_force > 50 && choose_force <= 60) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.seven_of_clubs);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=7;
                                 probeg++;
 
                         } else if (choose_force > 60 && choose_force <= 70) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.eight_of_clubs);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=8;
                                 probeg++;
 
                         } else if (choose_force > 70 && choose_force <= 80) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.nine_of_clubs);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=9;
                                 probeg++;
                         } else if (choose_force > 80 && choose_force <= 90) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.ten_of_clubs);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=10;
                                 probeg++;
 
                         } else if (choose_force > 90 && choose_force <= 95) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.king_of_clubs);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=11;
                                 probeg++;
 
                         } else if (choose_force > 95 && choose_force <= 100) {
 
                                 player2ThirdCardImage.setImageResource(R.drawable.ace_of_clubs);
+                            player2ThirdCardImage.startAnimation(sunRiseAnimation);
                                 main_count_of_player+=12;
                                 probeg++;
                         }
@@ -2130,7 +3375,7 @@ public class MainActivity2 extends AppCompatActivity {
 
 
                 main_count =""+ main_count_of_player;
-                bt_count.setText(main_count);
+                bt_count.setText("Ваш счёт: "+main_count);
 
             }
         });
@@ -2159,6 +3404,10 @@ public class MainActivity2 extends AppCompatActivity {
                 demonstration2.setY(9999);
                 demonstration3.setX(9999);
                 demonstration3.setY(9999);
+                bt_bot_count.setText("Счёт бота: " + bot_count);
+
+
+
             }
         });
 
