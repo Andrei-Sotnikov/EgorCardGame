@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity2"
-    android:background="@drawable/f">
+    android:background="@drawable/f"
+    tools:context=".MainActivity2">
 
 
     <Button
@@ -15,8 +15,11 @@
         android:layout_marginStart="316dp"
         android:layout_marginLeft="316dp"
         android:layout_marginTop="28dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
         android:background="@drawable/button"
         android:text="help"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

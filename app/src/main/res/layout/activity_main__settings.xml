@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main_Settings"
-    android:background="@drawable/second">
+    android:background="@drawable/second"
+    tools:context=".Main_Settings">
 
 
     <TextView
@@ -21,51 +21,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/et_name_of_player"
-        android:layout_width="219dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginLeft="112dp"
-        android:layout_marginTop="84dp"
-        android:layout_marginBottom="60dp"
-        android:background="@color/button"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Введите имя игрока"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/accept_name_of_player"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_just_name"
-        android:layout_width="82dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="84dp"
-        android:layout_marginBottom="235dp"
-        android:background="@color/button"
-        android:gravity="center"
-        android:text="NAME: "
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/background_image1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="110dp"
         android:layout_height="17dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginLeft="152dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginLeft="148dp"
+        android:layout_marginTop="121dp"
         android:background="@color/button"
         android:text="игральный стол"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/accept_name_of_player" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/background_image1"
@@ -93,11 +59,14 @@
         android:id="@+id/background_image3"
         android:layout_width="111dp"
         android:layout_height="180dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="208dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/background_image2"
-        app:layout_constraintTop_toBottomOf="@+id/et_name_of_player"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/background3" />
 
     <Button
@@ -111,17 +80,5 @@
         android:text="Принять"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/background_image1" />
-
-    <Button
-        android:id="@+id/accept_name_of_player"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginLeft="156dp"
-        android:layout_marginTop="36dp"
-        android:background="@drawable/button"
-        android:text="OK"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_name_of_player" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

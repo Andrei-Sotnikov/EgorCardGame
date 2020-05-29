@@ -86,9 +86,9 @@ public class MainResults extends AppCompatActivity {
 
         list_results = (ListView) findViewById(R.id.list_results);
         final String[] catNames = new String[] {
-                "Рыжик", "Барсик", "Мурзик", "Мурка", "Васька",
-                "Томасина", "Кристина", "Пушок", "Дымка", "Кузя",
-                "Китти", "Масяня", "Симба" , "Кристина", "Пушок", "Дымка", "Кузя"
+                "Player1 - is winner", "Player1 - is winner", "Player2 - is winner", "Player1 - is winner", "Player2 - is winner",
+                "Player2 - is winner", "Player2 - is winner", "Player1 - is winner" , "Player1 - is winner"
+
         };
      /*  for (int i = 0; i < test1.length; i++) {
             if (test.get(i) != null){
@@ -100,6 +100,8 @@ public class MainResults extends AppCompatActivity {
       //  Toast.makeText(this , "lol" , Toast.LENGTH_LONG).show();
         list_results.setAdapter(adapter);
 
-        tv_best_player.setText("Лучший игрок: " + best_name);
+        String kek[] = best_name.split(" ");
+
+        tv_best_player.setText("Лучший игрок: "+kek[0]);
     }
 }

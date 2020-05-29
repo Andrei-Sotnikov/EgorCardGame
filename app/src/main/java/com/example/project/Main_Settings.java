@@ -37,10 +37,10 @@ public class Main_Settings extends AppCompatActivity {
         background_image2 = (ImageView) findViewById(R.id.background_image2);
         background_image3 = (ImageView) findViewById(R.id.background_image3);
         bt_accept_image = (Button) findViewById(R.id.bt_accept_image);
-        et_name_of_player = (EditText) findViewById(R.id.et_name_of_player);
-        accept_name_of_player = (Button) findViewById(R.id.accept_name_of_player);
+       // et_name_of_player = (EditText) findViewById(R.id.et_name_of_player);
+       // accept_name_of_player = (Button) findViewById(R.id.accept_name_of_player);
 
-        accept_name_of_player.setOnClickListener(new View.OnClickListener() {
+      /*  accept_name_of_player.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!et_name_of_player.getText().toString().equals("") ){
@@ -49,7 +49,7 @@ public class Main_Settings extends AppCompatActivity {
                     Toast.makeText(Main_Settings.this, "Поле с именем должно быть заполнено" , Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
 
 
 
@@ -98,7 +98,7 @@ public class Main_Settings extends AppCompatActivity {
             }
         });
 
-        accept_name_of_player.setOnClickListener(new View.OnClickListener() {
+/*        accept_name_of_player.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name;
@@ -109,7 +109,7 @@ public class Main_Settings extends AppCompatActivity {
                 }
 
             }
-        });
+        });*/
 
 
     }

@@ -2,6 +2,7 @@ package com.example.project;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -42,6 +43,8 @@ public class MainActivity2 extends AppCompatActivity {
     int bot_count , bot_cards;
 
     int proverka_dostupa;
+    DBsecond dBsecond;
+    SQLiteDatabase database;
 
     int probeg ;
     //float btX , btY;
@@ -66,6 +69,13 @@ public class MainActivity2 extends AppCompatActivity {
         bt_count = (Button) findViewById(R.id.bt_count);
        // proverka_dostupa = 0;
         hit = (Button) findViewById(R.id.Hit);
+
+
+
+        dBsecond = new DBsecond(this);
+        database = dBsecond.getWritableDatabase();
+
+
 
         tv_winner = (TextView) findViewById(R.id.tv_winner);
 
@@ -3383,20 +3393,35 @@ public class MainActivity2 extends AppCompatActivity {
         hit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Cursor cursor = database.query(DBsecond.TABLE_CONTACTS, null, null, null, null, null, null);
+                ContentValues contentValues = new ContentValues();
+
+
                 if (main_count_of_player>bot_count){
                     if (main_count_of_player<=21){
-                    tv_winner.setText("ВЫ ПОБЕДИЛИ!");}
+                    tv_winner.setText("ВЫ ПОБЕДИЛИ!");
+                        contentValues.put(DBsecond.KEY_NAME, "Вы победили");
+                        database.insert(DBsecond.TABLE_CONTACTS, null, contentValues);}
                     else if(bot_count<=21) {
                         tv_winner.setText("ВЫ ПРОИГРАЛИ");
+                        contentValues.put(DBsecond.KEY_NAME, "Вы проиграли");
+                        database.insert(DBsecond.TABLE_CONTACTS, null, contentValues);
                     }
                 }else if (main_count_of_player<bot_count){
                     if (bot_count<=21){
-                    tv_winner.setText("ВЫ ПРОИГРАЛИ");}
+                    tv_winner.setText("ВЫ ПРОИГРАЛИ");
+                        contentValues.put(DBsecond.KEY_NAME, "Вы проиграли");
+                        database.insert(DBsecond.TABLE_CONTACTS, null, contentValues);}
                     else if (main_count_of_player<=21){
                         tv_winner.setText("ВЫ ПОБЕДИЛИ!");
+                        contentValues.put(DBsecond.KEY_NAME, "Вы победили");
+                        database.insert(DBsecond.TABLE_CONTACTS, null, contentValues);
                     }
                 }else{
                     tv_winner.setText("НИЧЬЯ");
+                    contentValues.put(DBsecond.KEY_NAME, "Ничья");
+                    database.insert(DBsecond.TABLE_CONTACTS, null, contentValues);
                 }
                 demonstration.setX(9999);
                 demonstration.setY(9999);
